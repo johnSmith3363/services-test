@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component , inject} from '@angular/core';
 import { Manga } from '../manga';
 import { MangaBoxComponent } from '../manga-box/manga-box.component';
 import { CommonModule } from '@angular/common';
+import { MangaService } from '../manga.service';
 
 @Component({
   selector: 'app-home',
@@ -11,23 +12,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  mangaList:Manga[] = [
-    {
-      id:1,
-      name:"Chainsaw Man",
-      image:'./assets/Manga/chainsaw_man.png'
-    },
-    {
-      id:2,
-      name:"Fullmetal Alechmist",
-      image:"./assets/Manga/fullmetal.jpg"
-    },
-    {
-      id:3,
-      name:"Jobless Reincarnation",
-      image:"./assets/Manga/jobless.jpg",
-    }
+  mangaList:Manga[] = [];
+  mangaService:MangaService = inject(MangaService);
 
-
-  ];
+  constructor()
+  {
+    this.mangaList = this.mangaService.getAllMangas();
+  }
 }

@@ -1,0 +1,13 @@
+.article{
+
+    margin:0 auto;
+    width:600px;
+    padding:0;
+    background-color: white;
+
+}
+
+.article img{
+    width:100%;
+    object-fit:cover;
+}

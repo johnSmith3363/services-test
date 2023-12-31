@@ -1,6 +1,7 @@
 .box{
     width:300px;
     background-color: beige;
+    margin-bottom:6px;
 }
 
 .box img{

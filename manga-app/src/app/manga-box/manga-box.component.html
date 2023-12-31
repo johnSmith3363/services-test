@@ -1,5 +1,5 @@
 <div class="box">
     <img [src]="manga.image">
-    <p>{{manga.name}}</p>
-    <a routerLink="Details">Read More</a>
+    <h2>{{manga.name}}</h2>
+    <a [routerLink]="['/details', manga.id]">Read More</a>
 </div>
